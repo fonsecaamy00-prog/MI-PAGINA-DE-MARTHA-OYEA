@@ -1,0 +1,223 @@
+/* ========================================================
+   HOJA DE ESTILOS - PÁGINA WEB MARTHA TEGÜE
+   Diseño básico, limpio y sin animaciones
+   ======================================================== */
+
+/* 1. REINICIO BÁSICO Y VARIABLES DE COLOR */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-fondo: #0a0314;
+    --color-fondo-secundario: #07010e;
+    --color-morado-principal: #6c3e9c;
+    --color-morado-borde: #4a286e;
+    --color-morado-destacado: #b57edc;
+    --color-texto-blanco: #ffffff;
+    --color-texto-suave: #c7b8db;
+    --color-texto-apagado: #8a7a9e;
+    --fuente-titulos: 'Rajdhani', sans-serif;
+    --fuente-cuerpo: 'Rubik', sans-serif;
+}
+
+body {
+    background-color: var(--color-fondo);
+    /* Fondo con efecto galáctico / nebulosa usando degradados morados */
+    background-image: 
+        radial-gradient(circle at 10% 45%, rgba(108, 42, 160, 0.38) 0%, transparent 40%),
+        radial-gradient(circle at 90% 25%, rgba(125, 45, 180, 0.35) 0%, transparent 45%),
+        radial-gradient(ellipse at 50% 30%, rgba(95, 30, 140, 0.3) 0%, transparent 60%),
+        linear-gradient(180deg, #0d041a 0%, #130626 45%, #0a0215 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: var(--color-texto-blanco);
+    font-family: var(--fuente-cuerpo);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 2. ENCABEZADO Y MENÚ DE NAVEGACIÓN */
+.encabezado {
+    width: 100%;
+    padding: 24px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.navegacion {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+}
+
+.enlace {
+    color: var(--color-texto-blanco);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    padding-bottom: 4px;
+}
+
+/* Enlace activo con línea inferior morada */
+.enlace.activo {
+    border-bottom: 2px solid var(--color-morado-destacado);
+}
+
+.logo-central {
+    font-family: var(--fuente-titulos);
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--color-morado-destacado);
+    letter-spacing: 2px;
+}
+
+/* 3. SECCIÓN PRINCIPAL (HERO) */
+.contenido-principal {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px 80px 20px;
+}
+
+.presentacion {
+    max-width: 800px;
+    width: 100%;
+}
+
+.saludo {
+    font-family: var(--fuente-titulos);
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--color-texto-blanco);
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    /* Resplandor morado suave */
+    text-shadow: 0 0 15px rgba(181, 126, 220, 0.6), 0 0 35px rgba(108, 42, 160, 0.4);
+}
+
+.profesion {
+    font-family: var(--fuente-titulos);
+    font-size: 34px;
+    font-weight: 600;
+    color: var(--color-texto-blanco);
+    letter-spacing: 1.5px;
+    line-height: 1.25;
+    margin-bottom: 24px;
+}
+
+.descripcion {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--color-texto-suave);
+    max-width: 620px;
+    margin: 0 auto 36px auto;
+    font-weight: 300;
+}
+
+/* 4. BOTONES */
+.botones {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.boton {
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    padding: 13px 28px;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+.boton-principal {
+    background-color: var(--color-morado-principal);
+    color: var(--color-texto-blanco);
+    border: 1px solid var(--color-morado-principal);
+}
+
+.boton-secundario {
+    background-color: #17092c;
+    color: var(--color-texto-blanco);
+    border: 1px solid var(--color-morado-borde);
+}
+
+/* 5. PIE DE PÁGINA (FOOTER) */
+.pie-pagina {
+    background-color: var(--color-fondo-secundario);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 28px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info-autor {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.logo-footer {
+    font-family: var(--fuente-titulos);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-morado-destacado);
+    margin-bottom: 6px;
+}
+
+.copyright,
+.credito {
+    font-size: 12px;
+    color: var(--color-texto-apagado);
+}
+
+.redes-sociales {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.icono-social {
+    color: var(--color-texto-suave);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 6. ADAPTABILIDAD PARA PANTALLAS PEQUEÑAS (RESPONSIVE BÁSICO) */
+@media (max-width: 768px) {
+    .navegacion {
+        gap: 18px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .saludo {
+        font-size: 34px;
+    }
+
+    .profesion {
+        font-size: 24px;
+    }
+
+    .pie-pagina {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+        padding: 30px 20px;
+    }
+
+    .info-autor {
+        align-items: center;
+    }
+}
